@@ -1,0 +1,14 @@
+dim_hco:
+  path: data/dim_hco.xlsx
+  schema:
+    hco_id: str
+    hco_name: str
+    region: str
+fct_sales:
+  path: data/fct_sales.xlsx
+  schema:
+    hco_id: str
+    product: str
+    qty: int
+    sales_date: str
+    sales_id: int
