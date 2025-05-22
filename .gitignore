@@ -1,0 +1,22 @@
+
+# Ignore DB
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environment
+.venv/
+env/
+venv/
+.DS_Store
+
+# Jupyter / IDE
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Logs
+*.log
