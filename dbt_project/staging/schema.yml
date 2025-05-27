@@ -1,0 +1,39 @@
+
+version: 2
+
+sources:
+  - name: main
+    database: ""
+    schema: ""
+    tables:
+      - name: fct_sales
+        description: "Sales transaction fact table from Excel"
+        columns:
+          - name: sales_id
+            description: "Primary key for sales"
+            tests:
+              - not_null
+              - unique
+          - name: hco_id
+            description: "Healthcare organization"
+            tests:
+              - not_null
+          - name: product
+            description: "Sold product name"
+          - name: qty
+            description: "Quantity sold"
+          - name: sales_date
+            description: "Date of sale"
+
+      - name: dim_hco
+        description: "Dimension table for healthcare organizations"
+        columns:
+          - name: hco_id
+            description: "Primary key for HCO"
+            tests:
+              - not_null
+              - unique
+          - name: hco_name
+            description: "Hospital name"
+          - name: region
+            description: "Sales region"
