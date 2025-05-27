@@ -1,0 +1,5 @@
+column_name,data_type
+sales_id,int
+hco_id,string
+qty,int
+sales_date,string
