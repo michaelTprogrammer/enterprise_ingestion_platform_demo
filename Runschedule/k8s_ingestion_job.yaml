@@ -1,0 +1,25 @@
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ingestion-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: ingestion
+        image: python:3.9
+        command: ["sh", "-c"]
+        args:
+          - pip install pandas openpyxl pyyaml sqlite3 &&
+            python ingestion/validate_schema.py --config ingestion/config.yml --table fct_sales &&
+            python ingestion/load_to_warehouse.py --file data/fct_sales.xlsx --table fct_sales
+        volumeMounts:
+        - name: data-volume
+          mountPath: /app/data
+      restartPolicy: Never
+      volumes:
+      - name: data-volume
+        hostPath:
+          path: /mnt/data
+  backoffLimit: 2
