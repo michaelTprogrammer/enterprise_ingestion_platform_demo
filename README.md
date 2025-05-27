@@ -39,7 +39,7 @@ enterprise_ingestion_demo/
 ```
 
 ## ✅ Goals
-
+- Simulate the data ingestion engine in real world 
 - Show modular data engineering thinking
 - Demonstrate practical dbt usage
 - Make engineering ability visible for hiring manager
